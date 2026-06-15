@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr' id='html-tag'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title id='page-title'>Adnan Marsal | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-elevated: #12121a;
+            --card: #16161f;
+            --card-hover: #1c1c26;
+            --accent: #c9a574;
+            --accent-soft: rgba(201, 165, 116, 0.12);
+            --accent-border: rgba(201, 165, 116, 0.28);
+            --text-main: #e8e6e1;
+            --text-secondary: #a8a59e;
+            --text-muted: #6b6860;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-strong: rgba(255, 255, 255, 0.12);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+            --font-arabic: 'Noto Kufi Arabic', 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg);
+            background-image: 
+                radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201, 165, 116, 0.04), transparent 60%),
+                radial-gradient(ellipse 60% 50% at 100% 100%, rgba(201, 165, 116, 0.025), transparent 60%);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.65;
+            overflow-x: hidden;
+            font-weight: 400;
+            letter-spacing: -0.005em;
+        }
+
+        html[dir='rtl'] body {
+            font-family: var(--font-arabic);
+            line-height: 1.8;
+            letter-spacing: 0;
+        }
+
+        html[dir='rtl'] h1,
+        html[dir='rtl'] h2,
+        html[dir='rtl'] h3 {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .container {
+            width: min(1140px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ============ HEADER ============ */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(10, 10, 15, 0.72);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+
+        .nav {
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        html[dir='rtl'] .logo {
+            font-family: var(--font-arabic);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: var(--transition);
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .lang-btn {
+            border: 1px solid var(--accent-border);
+            background: transparent;
+            color: var(--accent);
+            border-radius: 8px;
+            padding: 9px 16px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: var(--transition);
+            letter-spacing: 0.02em;
+        }
+
+        html[dir='rtl'] .lang-btn {
+            font-family: var(--font-arabic);
+        }
+
+        .lang-btn:hover {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        main {
+            padding: 0 0 80px;
+        }
+
+        /* ============ SECTIONS ============ */
+        .section {
+            padding: 96px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ HERO ============ */
+        .profile-header {
+            min-height: calc(100vh - 74px);
+            display: grid;
+            grid-template-columns: minmax(240px, 320px) 1fr;
+            align-items: center;
+            gap: 56px;
+            padding-top: 48px;
+        }
+
+        .profile-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image-wrap {
+            width: min(280px, 72vw);
+            aspect-ratio: 1;
+            padding: 3px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, rgba(201, 165, 116, 0.2) 50%, transparent 100%);
+            position: relative;
+        }
+
+        .profile-image-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 1px solid var(--accent-border);
+            opacity: 0.4;
+        }
+
+        .profile-image-link {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+            text-decoration: none;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .profile-image-link:hover {
+            filter: brightness(1.08);
+        }
+
+        .profile-image-wrap img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--bg);
+            background: var(--card);
+        }
+
+        .profile-copy {
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        html[dir='rtl'] .eyebrow {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+            font-size: 0.85rem;
+        }
+
+        .eyebrow::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-family: var(--font-serif);
+            font-size: clamp(2.8rem, 7vw, 5.4rem);
+            line-height: 1.02;
+            letter-spacing: -0.03em;
+            font-weight: 700;
+        }
+
+        html[dir='rtl'] h1 {
+            font-family: var(--font-arabic);
+            font-size: clamp(2.2rem, 6vw, 4.2rem);
+            line-height: 1.2;
+        }
+
+        h1 .accent {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        html[dir='rtl'] h1 .accent {
+            font-style: normal;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .location svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent);
+            opacity: 0.7;
+        }
+
+        .hero-bio {
+            max-width: 680px;
+            color: var(--text-secondary);
+            font-size: clamp(1rem, 1.6vw, 1.12rem);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        html[dir='rtl'] .hero-bio {
+            line-height: 1.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            min-height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 22px;
+            border: 1px solid var(--border-strong);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.92rem;
+            transition: var(--transition);
+            letter-spacing: 0.01em;
+            gap: 10px;
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .btn-primary {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .btn-primary svg {
+            fill: var(--bg);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:hover svg {
+            fill: var(--accent);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-secondary svg {
+            fill: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-border);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:hover svg {
+            fill: var(--accent);
+        }
+
+        /* ============ TERMINAL ============ */
+        .terminal {
+            max-width: 680px;
+            margin-top: 32px;
+            padding: 20px 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--bg-elevated);
+            box-shadow: var(--shadow-md);
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dot:first-child {
+            background: #d97757;
+            border-color: transparent;
+        }
+
+        .dot:nth-child(2) {
+            background: #d4a574;
+            border-color: transparent;
+        }
+
+        .dot:nth-child(3) {
+            background: #8a9a7a;
+            border-color: transparent;
+        }
+
+        .terminal-line {
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            direction: ltr;
+            text-align: left;
+        }
+
+        html[dir='rtl'] .terminal-line {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .terminal-prompt {
+            color: var(--accent);
+            opacity: 0.85;
+        }
+
+        .terminal-command {
+            color: var(--text-main);
+        }
+
+        .terminal-output {
+            min-height: 2rem;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px dashed var(--border);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            direction: ltr;
+            text-align: left;
+        }
+
+        html[dir='rtl'] .terminal-output {
+            font-family: var(--font-arabic);
+            direction: rtl;
+            text-align: right;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.1rem;
+            margin-left: 3px;
+            background: var(--accent);
+            vertical-align: -0.18em;
+            animation: blink 1.1s step-end infinite;
+        }
+
+        /* ============ SECTION HEADINGS ============ */
+        .section-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 32px;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-kicker {
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        html[dir='rtl'] .section-kicker {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+            font-size: 0.9rem;
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            font-weight: 700;
+        }
+
+        html[dir='rtl'] h2 {
+            font-family: var(--font-arabic);
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+        }
+
+        .section-intro {
+            max-width: 420px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        html[dir='rtl'] .section-intro {
+            line-height: 1.8;
+        }
+
+        /* ============ GRIDS ============ */
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .skills-category-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .contact-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        /* ============ CARDS ============ */
+        .card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--card);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .card:hover {
+            background: var(--card-hover);
+            transform: translateY(-4px);
+            border-color: var(--accent-border);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--text-main);
+        }
+
+        html[dir='rtl'] .card h3 {
+            font-family: var(--font-arabic);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+
+        html[dir='rtl'] .card p {
+            line-height: 1.85;
+        }
+
+        .project-card {
+            padding: 32px;
+        }
+
+        .project-card h3 {
+            color: var(--accent);
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+
+        html[dir='rtl'] .project-card h3 {
+            font-family: var(--font-arabic);
+            font-size: 1.3rem;
+        }
+
+        .project-card .project-intro {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        html[dir='rtl'] .project-card .project-intro {
+            line-height: 1.9;
+        }
+
+        .project-details {
+            display: grid;
+            gap: 16px;
+        }
+
+        .project-detail {
+            display: flex;
+            gap: 14px;
+        }
+
+        .project-detail::before {
+            content: '';
+            flex-shrink: 0;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-top: 10px;
+        }
+
+        html[dir='rtl'] .project-detail::before {
+            margin-top: 12px;
+        }
+
+        .project-detail-title {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .project-detail-desc {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        html[dir='rtl'] .project-detail-desc {
+            line-height: 1.85;
+        }
+
+        .meta,
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 11px;
+            border: 1px solid var(--border-strong);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        html[dir='rtl'] .tag {
+            font-family: var(--font-arabic);
+            font-size: 0.8rem;
+            letter-spacing: 0;
+        }
+
+        /* ============ SKILLS ============ */
+        .skill-category {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--card);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-border);
+            background: var(--card-hover);
+            transform: translateY(-3px);
+        }
+
+        .skill-category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-category-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .skill-category-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--accent);
+        }
+
+        .skill-category-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        html[dir='rtl'] .skill-category-title {
+            font-family: var(--font-arabic);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-item {
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        html[dir='rtl'] .skill-item {
+            font-family: var(--font-arabic);
+            font-size: 0.82rem;
+        }
+
+        .skill-item:hover {
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        /* ============ EXPERIENCE ============ */
+        .experience-card {
+            padding: 32px;
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .experience-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .experience-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--accent);
+        }
+
+        .experience-meta {
+            flex: 1;
+        }
+
+        .experience-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        html[dir='rtl'] .experience-title {
+            font-family: var(--font-arabic);
+        }
+
+        .experience-company {
+            color: var(--accent);
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .experience-list li {
+            display: flex;
+            gap: 14px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+
+        html[dir='rtl'] .experience-list li {
+            line-height: 1.85;
+        }
+
+        .experience-list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-top: 10px;
+        }
+
+        html[dir='rtl'] .experience-list li::before {
+            margin-top: 12px;
+        }
+
+        /* ============ EDUCATION ============ */
+        .education-card {
+            padding: 32px;
+            border: 1px solid var(--accent-border);
+            background: 
+                linear-gradient(135deg, rgba(201, 165, 116, 0.06), transparent 50%),
+                var(--card);
+        }
+
+        .education-card:hover {
+            transform: translateY(-3px);
+            background: var(--card-hover);
+        }
+
+        .education-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .education-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .education-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--bg);
+        }
+
+        .education-degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        html[dir='rtl'] .education-degree {
+            font-family: var(--font-arabic);
+        }
+
+        .education-school {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .education-year {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+        }
+
+        html[dir='rtl'] .education-year {
+            font-family: var(--font-arabic);
+        }
+
+        .education-focus {
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .education-focus-label {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            font-family: var(--font-mono);
+        }
+
+        html[dir='rtl'] .education-focus-label {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+            font-size: 0.85rem;
+        }
+
+        .education-focus-desc {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+
+        html[dir='rtl'] .education-focus-desc {
+            line-height: 1.85;
+        }
+
+        /* ============ CERT PANEL ============ */
+        .cert-panel {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 32px;
+            padding: 40px;
+            border: 1px solid var(--accent-border);
+            border-radius: var(--radius-lg);
+            background: 
+                linear-gradient(135deg, rgba(201, 165, 116, 0.06), transparent 50%),
+                var(--card);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cert-panel h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        html[dir='rtl'] .cert-panel h3 {
+            font-family: var(--font-arabic);
+        }
+
+        .cert-panel p {
+            max-width: 640px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .credly-badge {
+            min-height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 26px;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            white-space: nowrap;
+            transition: var(--transition);
+            letter-spacing: 0.01em;
+            gap: 10px;
+        }
+
+        .credly-badge svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--accent);
+            transition: var(--transition);
+        }
+
+        .credly-badge:hover {
+            background: var(--accent);
+            color: var(--bg);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(201, 165, 116, 0.2);
+        }
+
+        .credly-badge:hover svg {
+            fill: var(--bg);
+        }
+
+        /* ============ CONTACT ============ */
+        .contact-card {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+        }
+
+        html[dir='rtl'] .contact-card {
+            text-align: right;
+        }
+
+        .contact-card .label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--accent);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        html[dir='rtl'] .contact-card .label {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+            font-size: 0.8rem;
+        }
+
+        .contact-card .value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        html[dir='rtl'] .contact-card .value {
+            font-family: var(--font-arabic);
+        }
+
+        .contact-card .hint {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        html[dir='rtl'] .contact-card .hint {
+            font-family: var(--font-arabic);
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            margin-top: 64px;
+            padding: 32px 0 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            text-align: center;
+            font-size: 0.88rem;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 980px) {
+            .profile-header {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .profile-visual {
+                order: -1;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .terminal {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .eyebrow {
+                justify-content: center;
+            }
+
+            .location {
+                justify-content: center;
+            }
+
+            .skills-category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .cert-panel {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: min(100% - 28px, 1140px);
+            }
+
+            .nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 16px 0;
+                gap: 16px;
+            }
+
+            .nav-links {
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            .section {
+                padding: 64px 0;
+            }
+
+            .skills-category-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credly-badge {
+                width: 100%;
+            }
+
+            .cert-panel {
+                padding: 28px;
+            }
+
+            .project-card,
+            .experience-card,
+            .education-card {
+                padding: 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class='site-header'>
+        <div class='container nav'>
+            <a class='logo' href='#home' id='nav-logo'>Adnan <span>Marsal</span></a>
+            <nav class='nav-links'>
+                <a href='#home' id='nav-home'>Home</a>
+                <a href='#experience' id='nav-experience'>Experience</a>
+                <a href='#education' id='nav-education'>Education</a>
+                <a href='#skills' id='nav-skills'>Skills</a>
+                <a href='#projects' id='nav-projects'>Projects</a>
+                <a href='#certifications' id='nav-certifications'>Certifications</a>
+                <a href='#contact' id='nav-contact'>Contact</a>
+                <button class='lang-btn' id='langToggle' type='button'>Arabic</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class='container'>
+            <header class='profile-header section' id='home'>
+                <div class='profile-visual'>
+                    <div class='profile-image-wrap'>
+                        <a class='profile-image-link' href='https://ibb.co/Qj1dT3jX' target='_blank' rel='noopener noreferrer'>
+                            <img id='profile-image' src='https://i.ibb.co/6JfBT7JN/IMG.jpg' alt='Adnan Marsal profile picture'>
+                        </a>
+                    </div>
+                </div>
+
+                <div class='profile-copy'>
+                    <p class='eyebrow' id='profile-kicker'>Web & Automation Developer · Cyber Security Engineer</p>
+                    <h1 id='name'>Adnan <span class='accent'>Marsal</span></h1>
+                    <div class='location'>
+                        <svg viewBox='0 0 24 24'><path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/></svg>
+                        <span id='location'>Baghdad, Al-Saydiya</span>
+                    </div>
+                    <p class='hero-bio' id='bio'>Systems & Automation Developer, Cyber Security and Network Engineer. Specialized in architecting complex administrative systems (ERP/POS), advanced dashboards, and low-level automation frameworks using React, Python, and Next.js. I possess a comprehensive architectural understanding spanning network and server infrastructure design and hardening, frontend development, and AI Agents integration. I focus on writing clean, secure, and scalable code with full adherence to cyber security standards.</p>
+
+                    <div class='hero-actions'>
+                        <a class='btn btn-primary' href='https://github.com/am3dm' target='_blank' rel='noopener noreferrer'>
+                            <svg viewBox='0 0 24 24'><path d='M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z'/></svg>
+                            <span id='btn-github'>GitHub</span>
+                        </a>
+                        <a class='btn btn-secondary' href='https://www.credly.com/users/adnan-altaii/badges' target='_blank' rel='noopener noreferrer'>
+                            <svg viewBox='0 0 24 24'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z'/></svg>
+                            <span id='btn-credly'>Credly</span>
+                        </a>
+                    </div>
+
+                    <div class='terminal'>
+                        <div class='terminal-header' aria-hidden='true'>
+                            <span class='dot'></span>
+                            <span class='dot'></span>
+                            <span class='dot'></span>
+                        </div>
+                        <div class='terminal-line'>
+                            <span class='terminal-prompt' id='terminal-prefix'>adnan@portfolio:~$</span>
+                            <span> </span>
+                            <span class='terminal-command' id='terminal-command'>whoami</span>
+                        </div>
+                        <div class='terminal-output'>
+                            <span id='terminal-output'>Systems & Automation Developer</span>
+                            <span class='cursor' aria-hidden='true'></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class='section' id='experience'>
+                <div class='section-heading'>
+                    <div>
+                        <p class='section-kicker' id='experience-kicker'>Professional Experience</p>
+                        <h2 id='experience-title'>Professional Experience</h2>
+                    </div>
+                    <p class='section-intro' id='experience-intro'>Hands-on infrastructure, networking, and systems work focused on reliable delivery and secure operations.</p>
+                </div>
+
+                <article class='card experience-card'>
+                    <div class='experience-header'>
+                        <div class='experience-icon'>
+                            <svg viewBox='0 0 24 24'><path d='M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z'/></svg>
+                        </div>
+                        <div class='experience-meta'>
+                            <div class='experience-title' id='experience-role'>IT & Network Technician</div>
+                            <div class='experience-company' id='experience-company'>Infrastructure & Technical Support</div>
+                        </div>
+                    </div>
+                    <ul class='experience-list' id='experience-list'>
+                        <li id='exp-item-1'>Designed, deployed, and maintained local network infrastructure (LAN) for enterprise environments.</li>
+                        <li id='exp-item-2'>Diagnosed and resolved complex hardware and network layer issues, strengthening the ability to correlate software problems with their infrastructure root causes.</li>
+                        <li id='exp-item-3'>Provided advanced technical support for IT operations and hardware troubleshooting.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class='section' id='education'>
+                <div class='section-heading'>
+                    <div>
+                        <p class='section-kicker' id='education-kicker'>Academic Education</p>
+                        <h2 id='education-title'>Academic Education</h2>
+                    </div>
+                    <p class='section-intro' id='education-intro'>Academic background and specialization focus.</p>
+                </div>
+
+                <article class='card education-card'>
+                    <div class='education-header'>
+                        <div class='education-icon'>
+                            <svg viewBox='0 0 24 24'><path d='M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z'/></svg>
+                        </div>
+                        <div>
+                            <div class='education-degree' id='education-degree'>Bachelor in Cyber Security Engineering</div>
+                            <div class='education-school' id='education-school'>Al-Shaab University, Baghdad, Iraq</div>
+                            <div class='education-year' id='education-year'>4th Year · Expected Graduation 2027</div>
+                        </div>
+                    </div>
+                    <div class='education-focus'>
+                        <div class='education-focus-label' id='education-focus-label'>Technical Focus</div>
+                        <p class='education-focus-desc' id='education-focus-desc'>Network security and vulnerability assessment, applying reverse engineering principles and penetration testing to write hardened code, and designing systems resilient to application and network-level breaches.</p>
+                    </div>
+                </article>
+            </section>
+
+            <section class='section' id='skills'>
+                <div class='section-heading'>
+                    <div>
+                        <p class='section-kicker' id='skills-kicker'>Technical Stack</p>
+                        <h2 id='skills-title'>Technical Stack</h2>
+                    </div>
+                    <p class='section-intro' id='skills-intro'>A focused stack spanning systems engineering, full-stack development, AI automation, and network administration.</p>
+                </div>
+
+                <div class='grid skills-category-grid' id='skills-grid'></div>
+            </section>
+
+            <section class='section' id='projects'>
+                <div class='section-heading'>
+                    <div>
+                        <p class='section-kicker' id='projects-kicker'>Software Projects</p>
+                        <h2 id='projects-title'>Software Projects</h2>
+                    </div>
+                    <p class='section-intro' id='projects-intro'>Available and documented on GitHub. Selected work spanning enterprise ISP management, POS systems, cybersecurity tooling, and local AI automation.</p>
+                </div>
+
+                <div class='grid projects-grid' id='projects-list'></div>
+            </section>
+
+            <section class='section' id='certifications'>
+                <div class='section-heading'>
+                    <div>
+                        <p class='section-kicker' id='certifications-kicker'>Certifications</p>
+                        <h2 id='certifications-title'>Certifications</h2>
+                    </div>
+                    <p class='section-intro' id='certifications-intro'>Verified credentials and digital badges are collected in my Credly profile.</p>
+                </div>
+
+                <div class='cert-panel'>
+                    <div>
+                        <h3 id='certifications-panel-title'>Credly Certifications</h3>
+                        <p id='certifications-panel-desc'>Explore verified certifications, professional badges, and completed training records through my Credly profile.</p>
+                    </div>
+                    <a href='https://www.credly.com/users/adnan-altaii/badges' class='credly-badge' id='credly-link' target='_blank' rel='noopener noreferrer'>
+                        <svg viewBox='0 0 24 24'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z'/></svg>
+                        <span id='credly-link-text'>View Credly Certifications</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class='section' id='contact'>
+                <div class='section-heading'>
+                    <div>
+                        <p class='section-kicker' id='contact-kicker'>Get in Touch</p>
+                        <h2 id='contact-title'>Get in Touch</h2>
+                    </div>
+                    <p class='section-intro' id='contact-intro'>For enterprise systems, ISP automation, cybersecurity, POS, or local AI infrastructure, reach out through the channels below.</p>
+                </div>
+
+                <div class='grid contact-grid'>
+                    <a class='card contact-card' href='https://github.com/am3dm' target='_blank' rel='noopener noreferrer'>
+                        <span class='label' id='contact-github-label'>GitHub</span>
+                        <span class='value' id='contact-github-value'>@am3dm</span>
+                        <span class='hint' id='contact-github-hint'>Source code & repositories</span>
+                    </a>
+                    <a class='card contact-card' href='https://www.credly.com/users/adnan-altaii/badges' target='_blank' rel='noopener noreferrer'>
+                        <span class='label' id='contact-credly-label'>Credly</span>
+                        <span class='value' id='contact-credly-value'>Certifications</span>
+                        <span class='hint' id='contact-credly-hint'>Verified badges</span>
+                    </a>
+                    <a class='card contact-card' href='https://wa.me/964790185486' target='_blank' rel='noopener noreferrer'>
+                        <span class='label' id='contact-phone-label'>Phone / WhatsApp</span>
+                        <span class='value' id='contact-phone-value'>+964 790 185 486</span>
+                        <span class='hint' id='contact-phone-hint'>Available for calls</span>
+                    </a>
+                    <a class='card contact-card' href='mailto:altayyd889@gmail.com'>
+                        <span class='label' id='contact-email-label'>Email</span>
+                        <span class='value' id='contact-email-value'>altayyd889@gmail.com</span>
+                        <span class='hint' id='contact-email-hint'>Direct inbox</span>
+                    </a>
+                </div>
+            </section>
+
+            <footer class='footer'>
+                <p id='footer-text'>© 2026 Adnan Marsal. Built with HTML, CSS, and JavaScript.</p>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        // SVG icons for skill categories
+        const skillIcons = {
+            network: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>',
+            frontend: '<svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>',
+            backend: '<svg viewBox="0 0 24 24"><path d="M13 13v8h8v-8h-8zM3 21h8v-8H3v8zM3 3v8h8V3H3zm13.66-1.31L11 7.34 16.66 13l5.66-5.66-5.66-5.65z"/></svg>',
+            devops: '<svg viewBox="0 0 24 24"><path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V8h16v11zM6 10h12v2H6zm0 4h12v2H6z"/></svg>',
+            security: '<svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>',
+            ai: '<svg viewBox="0 0 24 24"><path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79 2.73 2.71 7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58 3.51-3.47 9.18-3.49 12.71-.02L21 3v7.12z"/></svg>'
+        };
+
+        const dictionary = {
+            en: {
+                dir: 'ltr',
+                pageTitle: 'Adnan Marsal | Portfolio',
+                navLogo: 'Adnan Marsal',
+                navHome: 'Home',
+                navExperience: 'Experience',
+                navEducation: 'Education',
+                navSkills: 'Skills',
+                navProjects: 'Projects',
+                navCertifications: 'Certifications',
+                navContact: 'Contact',
+                toggleBtn: 'Arabic',
+                profileImageSrc: 'https://i.ibb.co/6JfBT7JN/IMG.jpg',
+                profileImageAlt: 'Adnan Marsal profile picture',
+                profileKicker: 'Web & Automation Developer · Cyber Security Engineer',
+                name: 'Adnan Marsal',
+                location: 'Baghdad, Al-Saydiya',
+                bio: 'Systems & Automation Developer, Cyber Security and Network Engineer. Specialized in architecting complex administrative systems (ERP/POS), advanced dashboards, and low-level automation frameworks using React, Python, and Next.js. I possess a comprehensive architectural understanding spanning network and server infrastructure design and hardening, frontend development, and AI Agents integration. I focus on writing clean, secure, and scalable code with full adherence to cyber security standards.',
+                btnGithub: 'GitHub',
+                btnCredly: 'Credly',
+                terminalPrefix: 'adnan@portfolio:~$',
+                terminalCommand: 'whoami',
+                terminalOutput: 'Systems & Automation Developer',
+                typedRoles: ['Systems & Automation Developer...', 'Network & Infrastructure Engineer...', 'Backend & API Developer...'],
+                experienceKicker: 'Professional Experience',
+                experienceTitle: 'Professional Experience',
+                experienceIntro: 'Hands-on infrastructure, networking, and systems work focused on reliable delivery and secure operations.',
+                experienceRole: 'IT & Network Technician',
+                experienceCompany: 'Infrastructure & Technical Support',
+                expItem1: 'Designed, deployed, and maintained local network infrastructure (LAN) for enterprise environments.',
+                expItem2: 'Diagnosed and resolved complex hardware and network layer issues, strengthening the ability to correlate software problems with their infrastructure root causes.',
+                expItem3: 'Provided advanced technical support for IT operations and hardware troubleshooting.',
+                educationKicker: 'Academic Education',
+                educationTitle: 'Academic Education',
+                educationIntro: 'Academic background and specialization focus.',
+                educationDegree: 'Bachelor in Cyber Security Engineering',
+                educationSchool: 'Al-Shaab University, Baghdad, Iraq',
+                educationYear: '4th Year · Expected Graduation 2027',
+                educationFocusLabel: 'Technical Focus',
+                educationFocusDesc: 'Network security and vulnerability assessment, applying reverse engineering principles and penetration testing to write hardened code, and designing systems resilient to application and network-level breaches.',
+                skillsKicker: 'Technical Stack',
+                skillsTitle: 'Technical Stack',
+                skillsIntro: 'A focused stack spanning systems engineering, full-stack development, AI automation, and network administration.',
+                skillCategories: [
+                    {
+                        icon: 'network',
+                        title: 'Networking & IT Infrastructure',
+                        skills: ['Network Architecture', 'Active Directory Management', 'LAN Configuration', 'Hardware Troubleshooting', 'IT Support']
+                    },
+                    {
+                        icon: 'frontend',
+                        title: 'Frontend & System Development',
+                        skills: ['React.js', 'Next.js', 'JavaScript', 'Dashboard Architecture', 'UI/UX Design']
+                    },
+                    {
+                        icon: 'backend',
+                        title: 'Automation & Backend',
+                        skills: ['Python', 'System Automation', 'RESTful API Integration', 'Backend Logic', 'Data Processing']
+                    },
+                    {
+                        icon: 'devops',
+                        title: 'DevOps & Server Administration',
+                        skills: ['PostgreSQL', 'Docker & Docker Compose', 'Nginx (Reverse Proxy)', 'Load Balancing', 'Linux VPS Administration', 'Git']
+                    },
+                    {
+                        icon: 'security',
+                        title: 'Cyber Security & System Hardening',
+                        skills: ['Penetration Testing', 'Secure System Design', 'RBAC', 'SQLi Prevention', 'Rate Limiting', 'Threat Mitigation']
+                    },
+                    {
+                        icon: 'ai',
+                        title: 'AI & Advanced Automation',
+                        skills: ['Python', 'CrewAI', 'Microsoft AutoGen', 'Multi-LLM Architecture', 'LLM-Agnostic', 'Gemini API', 'Claude API', 'Groq API', 'Local Models', 'Cost Optimization', 'Autonomous Agents']
+                    }
+                ],
+                projectsKicker: 'Software Projects',
+                projectsTitle: 'Software Projects',
+                projectsIntro: 'Available and documented on GitHub. Selected work spanning enterprise ISP management, POS systems, cybersecurity tooling, and local AI automation.',
+                projects: [
+                    {
+                        title: 'Mimicray Framework (V1 & V2) — Threat Simulation & Automated Breach',
+                        intro: 'Advanced CLI-based framework serving as an independent breach simulation platform. Orchestrates various security tools programmatically to automate the full attack lifecycle.',
+                        details: [
+                            { title: 'System Architecture & Process Automation', desc: 'Developed an advanced framework via CLI that coordinates and manages different security tools programmatically to automate the complete attack lifecycle (reconnaissance, vulnerability scanning, and exploitation).' },
+                            { title: 'Tactical AI', desc: 'Integrated AI models to enable the framework to make real-time tactical decisions during execution, simulating adversarial behavior and independently adapting to target system defenses.' },
+                            { title: 'Advanced Persistent Threats (APT) Simulation', desc: 'Programmed and implemented advanced offensive capabilities within the framework, including lateral movement mechanisms across networks and credential harvesting techniques.' },
+                            { title: 'Stealth Operations Engineering', desc: 'Designed framework algorithms to operate silently (Operational Profile) with a focus on evasion techniques to ensure stable simulation without triggering early alerts.' },
+                            { title: 'Development Lifecycle', desc: 'Managed full SDLC, engineered clean and maintainable code, and responded effectively to update requirements to improve performance across two successive releases.' }
+                        ],
+                        tags: ['CLI', 'Breach Simulation', 'Adversarial AI', 'APT', 'Stealth Ops', 'SDLC']
+                    },
+                    {
+                        title: 'ISP Reseller & Subscription Management System',
+                        intro: 'Multi-tenant architecture designed for ISP resellers, enabling complete subscriber management, voucher tracking, and dynamic invoice generation.',
+                        details: [
+                            { title: 'System Architecture', desc: 'Designed a multi-tenant architecture tailored for ISP resellers, allowing the reseller to manage subscribers, track internet activation vouchers (with full history and active subscribers), and dynamically issue invoices.' },
+                            { title: 'Architecture & Security', desc: 'Implemented Role-Based Access Control (RBAC) to ensure complete data isolation between resellers for customer data and invoices, applying the Least Privilege principle at the API level.' },
+                            { title: 'Infrastructure & Network Hardening', desc: 'Protected endpoints by configuring Nginx as a Reverse Proxy to handle TLS/SSL encryption, applying strict Rate Limiting policies to mitigate DDoS and brute-force attacks.' },
+                            { title: 'Data Security', desc: 'Secured backend operations and PostgreSQL databases against SQLi attacks through strict input validation, with the entire runtime isolated within Docker containers.' }
+                        ],
+                        tags: ['Multi-tenant', 'RBAC', 'Nginx', 'PostgreSQL', 'Docker', 'Rate Limiting']
+                    },
+                    {
+                        title: 'ERP System — Inventory & Point of Sale (POS)',
+                        intro: 'Integrated system for inventory and sales management with interactive dashboards and a role-based POS design.',
+                        details: [
+                            { title: 'Operations & Frontend Management', desc: 'Developed a complete inventory and sales management system with interactive dashboards built using React to process and display live statistics, plus a POS system designed with roles for Admin, Warehouse Manager, Sales Clerk, and Accountant.' },
+                            { title: 'Data Integrity & Synchronization', desc: 'Designed a complex relational database schema to ensure data integrity and precise real-time synchronization between multiple POS terminals and the central database.' }
+                        ],
+                        tags: ['ERP', 'POS', 'React', 'Real-time Sync', 'RBAC', 'Relational DB']
+                    },
+                    {
+                        title: 'Autonomous AI Agents — Workflow Automation',
+                        intro: 'Independent AI agents built with Python and advanced orchestration frameworks to automate programming and analytical workflows.',
+                        details: [
+                            { title: 'Automation Engineering', desc: 'Developed independent AI agents using Python and frameworks such as CrewAI and Microsoft AutoGen to automate programming and analytical tasks autonomously.' },
+                            { title: 'Multi-LLM Architecture', desc: 'Engineered a flexible LLM-Agnostic architecture that enables smooth switching and integration with cloud APIs (Gemini, Claude, Groq) and Local Models. This design keeps systems resilient against provider outages, improves Cost Optimization, and preserves data privacy by processing sensitive tasks locally.' }
+                        ],
+                        tags: ['Python', 'CrewAI', 'Microsoft AutoGen', 'Multi-LLM Architecture', 'LLM-Agnostic', 'Gemini API', 'Claude API', 'Groq API', 'Local Models', 'Cost Optimization', 'Autonomous Agents', 'Workflow Automation']
+                    },
+                    {
+                        title: 'noexisStore — E-Commerce Platform',
+                        intro: 'Full-stack e-commerce platform with production deployment on VPS and containerized runtime.',
+                        details: [
+                            { title: 'Architectural Development', desc: 'Built the frontend using Next.js and connected it to PostgreSQL-backed custom REST APIs.' },
+                            { title: 'Deployment Engineering (DevOps)', desc: 'Executed actual production deployment on a VPS server, managing the runtime environment through Docker Compose to ensure service stability, and applied secure SSH Key-based authentication to prevent unauthorized access to production.' }
+                        ],
+                        tags: ['Next.js', 'PostgreSQL', 'Docker Compose', 'VPS', 'SSH Keys', 'DevOps']
+                    }
+                ],
+                certificationsKicker: 'Certifications',
+                certificationsTitle: 'Certifications',
+                certificationsIntro: 'Verified credentials and digital badges are collected in my Credly profile.',
+                certificationsPanelTitle: 'Credly Certifications',
+                certificationsPanelDesc: 'Explore verified certifications, professional badges, and completed training records through my Credly profile.',
+                credlyLinkText: 'View Credly Certifications',
+                contactKicker: 'Get in Touch',
+                contactTitle: 'Get in Touch',
+                contactIntro: 'For enterprise systems, ISP automation, cybersecurity, POS, or local AI infrastructure, reach out through the channels below.',
+                contactGithubLabel: 'GitHub',
+                contactGithubValue: '@am3dm',
+                contactGithubHint: 'Source code & repositories',
+                contactCredlyLabel: 'Credly',
+                contactCredlyValue: 'Certifications',
+                contactCredlyHint: 'Verified badges',
+                contactPhoneLabel: 'Phone / WhatsApp',
+                contactPhoneValue: '+964 790 185 486',
+                contactPhoneHint: 'Available for calls',
+                contactEmailLabel: 'Email',
+                contactEmailValue: 'altayyd889@gmail.com',
+                contactEmailHint: 'Direct inbox',
+                footerText: '© 2026 Adnan Marsal. Built with HTML, CSS, and JavaScript.'
+            },
+            ar: {
+                dir: 'rtl',
+                pageTitle: 'عدنان مرسال | السيرة الذاتية',
+                navLogo: 'عدنان مرسال',
+                navHome: 'الرئيسية',
+                navExperience: 'الخبرة',
+                navEducation: 'التعليم',
+                navSkills: 'المهارات',
+                navProjects: 'المشاريع',
+                navCertifications: 'الشهادات',
+                navContact: 'تواصل',
+                toggleBtn: 'English',
+                profileImageSrc: 'https://i.ibb.co/6JfBT7JN/IMG.jpg',
+                profileImageAlt: 'صورة شخصية لعدنان مرسال',
+                profileKicker: 'مطور ويب وأتمتة · مهندس أمن سيبراني',
+                name: 'عدنان مرسال',
+                location: 'بغداد، السيدية',
+                bio: 'مطور أنظمة وأتمتة ومهندس أمن سيبراني وشبكات. متخصص في هندسة وبناء الأنظمة الإدارية المعقدة مثل ERP/POS، ولوحات التحكم المتقدمة، وبنى الأتمتة التحتية باستخدام React و Python و Next.js. أمتلك فهماً معمارياً شاملاً يمتد من تصميم وتأمين البنى التحتية للشبكات والخوادم، إلى تطوير واجهات المستخدم، وحتى دمج وكلاء الذكاء الاصطناعي. أركز على كتابة كود نظيف، آمن، وقابل للتوسع، مع الالتزام التام بمعايير الأمن السيبراني لحماية التطبيقات والبيانات.',
+                btnGithub: 'GitHub',
+                btnCredly: 'Credly',
+                terminalPrefix: 'adnan@portfolio:~$',
+                terminalCommand: 'whoami',
+                terminalOutput: 'مطور أنظمة وأتمتة',
+                typedRoles: ['مطور أنظمة وأتمتة...', 'مهندس شبكات وبنية تحتية...', 'مطور Backend & API...'],
+                experienceKicker: 'الخبرة المهنية',
+                experienceTitle: 'الخبرة المهنية',
+                experienceIntro: 'خبرة عملية في البنية التحتية والشبكات وأنظمة التشغيل مع التركيز على التسليم الموثوق والعمليات الآمنة.',
+                experienceRole: 'فني شبكات وتقنية معلومات',
+                experienceCompany: 'البنية التحتية والدعم الفني',
+                expItem1: 'تصميم وتنفيذ وصيانة البنى التحتية للشبكات المحلية في بيئات المؤسسات.',
+                expItem2: 'تشخيص وحل المشاكل المعقدة على مستوى العتاد وطبقات الشبكات، مما عزز القدرة على ربط المشاكل البرمجية بجذورها في البنية التحتية.',
+                expItem3: 'تقديم الدعم الفني المتقدم لعمليات تقنية المعلومات واستكشاف أخطاء العتاد.',
+                educationKicker: 'التعليم الأكاديمي',
+                educationTitle: 'التعليم الأكاديمي',
+                educationIntro: 'الخلفية الأكاديمية والتخصص التقني.',
+                educationDegree: 'بكالوريوس هندسة الأمن السيبراني',
+                educationSchool: 'جامعة الشعب، بغداد، العراق',
+                educationYear: 'المرحلة الرابعة · متوقع التخرج 2027',
+                educationFocusLabel: 'التركيز التقني',
+                educationFocusDesc: 'أمن الشبكات وتقييم الثغرات، توظيف مبادئ الهندسة العكسية واختبار الاختراق في كتابة أكواد برمجية محكمة، وتصميم أنظمة تقاوم الاختراقات على مستويات التطبيق والشبكة.',
+                skillsKicker: 'المهارات التقنية',
+                skillsTitle: 'المهارات التقنية',
+                skillsIntro: 'مجموعة مهارات شاملة تمتد من هندسة الأنظمة إلى التطوير المتكامل، أتمتة الذكاء الاصطناعي، وإدارة الشبكات.',
+                skillCategories: [
+                    {
+                        icon: 'network',
+                        title: 'هندسة الشبكات والبنية التحتية',
+                        skills: ['Network Architecture', 'Active Directory Management', 'LAN Configuration', 'Hardware Troubleshooting', 'IT Support']
+                    },
+                    {
+                        icon: 'frontend',
+                        title: 'تطوير الواجهات والأنظمة',
+                        skills: ['React.js', 'Next.js', 'JavaScript', 'Dashboard Architecture', 'UI/UX Design']
+                    },
+                    {
+                        icon: 'backend',
+                        title: 'الأتمتة والعمليات الخلفية',
+                        skills: ['Python', 'System Automation', 'RESTful API Integration', 'Backend Logic', 'Data Processing']
+                    },
+                    {
+                        icon: 'devops',
+                        title: 'هندسة النشر وإدارة الخوادم',
+                        skills: ['PostgreSQL', 'Docker & Docker Compose', 'Nginx (Reverse Proxy)', 'Load Balancing', 'Linux VPS Administration', 'Git']
+                    },
+                    {
+                        icon: 'security',
+                        title: 'الأمن السيبراني وحماية الأنظمة',
+                        skills: ['Penetration Testing', 'Secure System Design', 'RBAC', 'SQLi Prevention', 'Rate Limiting', 'Threat Mitigation']
+                    },
+                    {
+                        icon: 'ai',
+                        title: 'الذكاء الاصطناعي والأتمتة المتقدمة',
+                        skills: ['Python', 'CrewAI', 'Microsoft AutoGen', 'Multi-LLM Architecture', 'LLM-Agnostic', 'Gemini API', 'Claude API', 'Groq API', 'Local Models', 'Cost Optimization', 'Autonomous Agents']
+                    }
+                ],
+                projectsKicker: 'المشاريع البرمجية',
+                projectsTitle: 'المشاريع البرمجية',
+                projectsIntro: 'متاحة وموثقة على GitHub. مختارات من الأعمال التي تغطي أنظمة إدارة ISP للمؤسسات، أنظمة POS، أدوات الأمن السيبراني، وأتمتة AI المحلية.',
+                projects: [
+                    {
+                        title: 'Mimicray Framework (V1 & V2) — محاكاة التهديدات والاختراق المؤتمت',
+                        intro: 'إطار عمل متقدم عبر CLI يعمل كمنصة مستقلة لمحاكاة الاختراقات. ينسق ويدير أدوات الأمان المختلفة برمجياً لأتمتة دورة حياة الهجوم بالكامل.',
+                        details: [
+                            { title: 'هندسة النظام وأتمتة العمليات', desc: 'تطوير إطار عمل متقدم عبر CLI يعمل كمنصة مستقلة لمحاكاة الاختراقات. يقوم النظام بتنسيق وإدارة أدوات الأمان المختلفة برمجياً لأتمتة دورة حياة الهجوم بالكامل (الاستطلاع، فحص الثغرات، والاستغلال).' },
+                            { title: 'الذكاء الاصطناعي التكتيكي', desc: 'دمج نماذج الذكاء الاصطناعي لتمكين الإطار من اتخاذ قرارات تكتيكية لحظية أثناء التنفيذ، مما يحاكي سلوك المهاجمين الحقيقيين ويتكيف مع دفاعات النظام المستهدف بشكل مستقل.' },
+                            { title: 'محاكاة Advanced Persistent Threats (APT)', desc: 'برمجة وتنفيذ قدرات هجومية متقدمة داخل بنية الإطار، تشمل آليات الحركة الجانبية داخل الشبكات، وتقنيات حصاد الاعتمادات.' },
+                            { title: 'هندسة التخفي', desc: 'تصميم خوارزميات الإطار لتعمل بصمت مع التركيز على آليات التهرب من أنظمة المراقبة لضمان استقرار عمليات المحاكاة دون إطلاق إنذارات مبكرة.' },
+                            { title: 'دورة حياة التطوير', desc: 'إدارة SDLC، هندسة كود نظيف وقابل للصيانة، والاستجابة الفعالة لمتطلبات التحديث لتحسين الأداء عبر إصدارين متعاقبين.' }
+                        ],
+                        tags: ['CLI', 'Breach Simulation', 'Adversarial AI', 'APT', 'Stealth Ops', 'SDLC']
+                    },
+                    {
+                        title: 'نظام إدارة اشتراكات الإنترنت للوكلاء',
+                        intro: 'معمارية متعددة المستويات مخصصة لوكلاء شبكات الإنترنت، تتيح إدارة شاملة للمشتركين وتتبع البطاقات وإصدار الفواتير الديناميكي.',
+                        details: [
+                            { title: 'هندسة النظام', desc: 'تصميم معمارية متعددة المستويات مخصصة لوكلاء شبكات الإنترنت، تتيح للوكيل إدارة المشتركين، تتبع بطاقات تفعيل الإنترنت (مع السجل الكامل والمفعّلين)، وإصدار الفواتير ديناميكياً.' },
+                            { title: 'المعمارية والأمان', desc: 'تطبيق RBAC لضمان العزل التام لبيانات العملاء والفواتير بين الوكلاء، وتطبيق مبدأ Least Privilege على مستوى API.' },
+                            { title: 'تأمين البنية التحتية والشبكة', desc: 'حماية نقاط النهاية عبر إعداد Nginx كـ Reverse Proxy لمعالجة تشفير TLS/SSL، وتطبيق سياسات Rate Limiting صارمة للحد من هجمات DDoS وهجمات التخمين.' },
+                            { title: 'أمن البيانات', desc: 'تأمين العمليات الخلفية وقواعد بيانات PostgreSQL ضد هجمات SQL عبر التحقق الصارم من المدخلات، مع عزل بيئة التشغيل بالكامل داخل حاويات Docker.' }
+                        ],
+                        tags: ['Multi-tenant', 'RBAC', 'Nginx', 'PostgreSQL', 'Docker', 'Rate Limiting']
+                    },
+                    {
+                        title: 'ERP System — Inventory & Point of Sale (POS)',
+                        intro: 'نظام متكامل لإدارة المخزون والمبيعات مع لوحات تحكم تفاعلية وتصميم مبني على الأدوار لنقاط البيع.',
+                        details: [
+                            { title: 'إدارة العمليات والواجهات', desc: 'تطوير نظام متكامل لإدارة المخزون والمبيعات، مزود بلوحات تحكم تفاعلية مبنية باستخدام React لمعالجة وعرض الإحصائيات الحية، بالإضافة إلى نظام POS المصمم بنظام أدوار: Admin و Warehouse Manager و Sales Clerk و Accountant.' },
+                            { title: 'سلامة وتزامن البيانات', desc: 'تصميم مخطط قواعد بيانات علائقي معقد لضمان سلامة البيانات والتزامن اللحظي الدقيق بين منافذ البيع المتعددة وقاعدة البيانات المركزية.' }
+                        ],
+                        tags: ['ERP', 'POS', 'React', 'Real-time Sync', 'RBAC', 'Relational DB']
+                    },
+                    {
+                        title: '4. أتمتة سير العمل بوكلاء الذكاء الاصطناعي (Autonomous AI Agents) — Workflow Automation',
+                        intro: 'تطوير وكلاء ذكاء اصطناعي مستقلين باستخدام Python وأطر عمل متقدمة لأتمتة المهام البرمجية والتحليلية.',
+                        details: [
+                            { title: 'هندسة الأتمتة', desc: 'تطوير وكلاء ذكاء اصطناعي مستقلين باستخدام Python وأطر عمل مثل CrewAI و Microsoft AutoGen لأتمتة المهام البرمجية والتحليلية بشكل مستقل.' },
+                            { title: 'هندسة البنية متعددة النماذج (Multi-LLM Architecture)', desc: 'هندسة بنية مرنة مستقلة عن النماذج (LLM-Agnostic) تتيح التبديل السلس والتكامل مع واجهات الـ API السحابية (Gemini, Claude, Groq) والنماذج المحلية (Local Models). يضمن هذا التصميم استقرار الأنظمة ضد أعطال مزودي الخدمة، تحسين تكاليف التشغيل (Cost Optimization)، وضمان خصوصية البيانات عند معالجة المهام الحساسة محلياً.' }
+                        ],
+                        tags: ['Python', 'CrewAI', 'Microsoft AutoGen', 'Multi-LLM Architecture', 'LLM-Agnostic', 'Gemini API', 'Claude API', 'Groq API', 'Local Models', 'Cost Optimization', 'Autonomous Agents', 'Workflow Automation']
+                    },
+                    {
+                        title: 'noexisStore — E-Commerce Platform',
+                        intro: 'منصة تجارة إلكترونية متكاملة مع نشر إنتاجي على VPS وبيئة تشغيل containerized.',
+                        details: [
+                            { title: 'التطوير المعماري', desc: 'بناء الواجهات الأمامية باستخدام Next.js وربطها بنهايات خلفية تعتمد على PostgreSQL عبر REST APIs مخصصة.' },
+                            { title: 'هندسة DevOps', desc: 'تنفيذ عملية النشر الإنتاجي الفعلي على VPS، وإدارة بيئة التشغيل عبر Docker Compose لضمان استقرار الخدمات، وتطبيق مصادقة آمنة بمفاتيح SSH لمنع الوصول غير المصرح به لبيئة الإنتاج.' }
+                        ],
+                        tags: ['Next.js', 'PostgreSQL', 'Docker Compose', 'VPS', 'SSH Keys', 'DevOps']
+                    }
+                ],
+                certificationsKicker: 'الشهادات',
+                certificationsTitle: 'الشهادات',
+                certificationsIntro: 'الشهادات والشارات الرقمية الموثقة مجمعة في ملفي على Credly.',
+                certificationsPanelTitle: 'شهادات Credly',
+                certificationsPanelDesc: 'استعرض الشهادات المهنية والشارات الرقمية وسجلات التدريب المكتملة من خلال ملفي على Credly.',
+                credlyLinkText: 'عرض شهادات Credly',
+                contactTitle: 'تواصل معي',
+                contactIntro: 'لأعمال أنظمة المؤسسات، أتمتة ISP، الأمن السيبراني، تطوير الانظمة والبرمجة ،أنظمة POS، أو بنية AI المحلية، يمكنك التواصل عبر القنوات التالية.',
+                contactGithubLabel: 'GitHub',
+                contactGithubValue: '@am3dm',
+                contactGithubHint: 'Source code & repositories',
+                contactCredlyLabel: 'Credly',
+                contactCredlyValue: 'Certifications',
+                contactCredlyHint: 'Verified badges',
+                contactPhoneLabel: 'Phone / WhatsApp',
+                contactPhoneValue: '+964 790 185 486',
+                contactPhoneHint: 'Available for calls',
+                contactEmailLabel: 'Email',
+                contactEmailValue: 'altayyd889@gmail.com',
+                contactEmailHint: 'Direct inbox',
+                footerText: '© 2026 Adnan Marsal. Built with HTML, CSS, and JavaScript.'
+            }
+        };
+
+        let currentLang = 'en';
+        let typeInterval;
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        const htmlTag = document.getElementById('html-tag');
+        const typedTextSpan = document.getElementById('terminal-output');
+
+        function renderSkillCategories(categories) {
+            const grid = document.getElementById('skills-grid');
+            grid.innerHTML = '';
+            categories.forEach(cat => {
+                const card = document.createElement('div');
+                card.className = 'skill-category';
+                card.innerHTML = `
+                    <div class='skill-category-header'>
+                        <div class='skill-category-icon'>${skillIcons[cat.icon]}</div>
+                        <div class='skill-category-title'>${cat.title}</div>
+                    </div>
+                    <div class='skill-list'>
+                        ${cat.skills.map(s => `<span class='skill-item'>${s}</span>`).join('')}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderProjects(projects) {
+            const list = document.getElementById('projects-list');
+            list.innerHTML = '';
+            projects.forEach(proj => {
+                const card = document.createElement('article');
+                card.className = 'card project-card';
+                card.innerHTML = `
+                    <h3>${proj.title}</h3>
+                    <p class='project-intro'>${proj.intro}</p>
+                    <div class='project-details'>
+                        ${proj.details.map(d => `
+                            <div class='project-detail'>
+                                <div>
+                                    <div class='project-detail-title'>${d.title}</div>
+                                    <div class='project-detail-desc'>${d.desc}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class='meta'>
+                        ${proj.tags.map(t => `<span class='tag'>${t}</span>`).join('')}
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        function applyLanguage(lang) {
+            const data = dictionary[lang];
+
+            htmlTag.setAttribute('dir', data.dir);
+            htmlTag.setAttribute('lang', lang);
+
+            const profileImage = document.getElementById('profile-image');
+            if (profileImage) {
+                profileImage.src = data.profileImageSrc;
+                profileImage.alt = data.profileImageAlt;
+            }
+
+            // Handle name with accent span
+            const nameEl = document.getElementById('name');
+            if (nameEl) {
+                const parts = data.name.split(' ');
+                if (parts.length > 1) {
+                    const firstName = parts.slice(0, -1).join(' ');
+                    const lastName = parts[parts.length - 1];
+                    nameEl.innerHTML = `${firstName} <span class='accent'>${lastName}</span>`;
+                } else {
+                    nameEl.textContent = data.name;
+                }
+            }
+
+            // Handle logo with accent span
+            const logoEl = document.getElementById('nav-logo');
+            if (logoEl) {
+                const parts = data.navLogo.split(' ');
+                if (parts.length > 1) {
+                    const firstName = parts.slice(0, -1).join(' ');
+                    const lastName = parts[parts.length - 1];
+                    logoEl.innerHTML = `${firstName} <span>${lastName}</span>`;
+                } else {
+                    logoEl.textContent = data.navLogo;
+                }
+            }
+
+            // Update all standard keys
+            const skipKeys = new Set(['dir', 'typedRoles', 'skillCategories', 'projects', 'name', 'navLogo']);
+            Object.keys(data).forEach(key => {
+                if (skipKeys.has(key)) return;
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = data[key];
+                }
+            });
+
+            const staticTextMap = {
+                'page-title': data.pageTitle,
+                'nav-home': data.navHome,
+                'nav-experience': data.navExperience,
+                'nav-education': data.navEducation,
+                'nav-skills': data.navSkills,
+                'nav-projects': data.navProjects,
+                'nav-certifications': data.navCertifications,
+                'nav-contact': data.navContact,
+                'langToggle': data.toggleBtn,
+                'profile-kicker': data.profileKicker,
+                'location': data.location,
+                'bio': data.bio,
+                'btn-github': data.btnGithub,
+                'btn-credly': data.btnCredly,
+                'terminal-prefix': data.terminalPrefix,
+                'terminal-command': data.terminalCommand,
+                'terminal-output': data.terminalOutput,
+                'experience-kicker': data.experienceKicker,
+                'experience-title': data.experienceTitle,
+                'experience-intro': data.experienceIntro,
+                'experience-role': data.experienceRole,
+                'experience-company': data.experienceCompany,
+                'education-kicker': data.educationKicker,
+                'education-title': data.educationTitle,
+                'education-intro': data.educationIntro,
+                'education-degree': data.educationDegree,
+                'education-school': data.educationSchool,
+                'education-year': data.educationYear,
+                'education-focus-label': data.educationFocusLabel,
+                'education-focus-desc': data.educationFocusDesc,
+                'skills-kicker': data.skillsKicker,
+                'skills-title': data.skillsTitle,
+                'skills-intro': data.skillsIntro,
+                'projects-kicker': data.projectsKicker,
+                'projects-title': data.projectsTitle,
+                'projects-intro': data.projectsIntro,
+                'certifications-kicker': data.certificationsKicker,
+                'certifications-title': data.certificationsTitle,
+                'certifications-intro': data.certificationsIntro,
+                'certifications-panel-title': data.certificationsPanelTitle,
+                'certifications-panel-desc': data.certificationsPanelDesc,
+                'credly-link-text': data.credlyLinkText,
+                'contact-kicker': data.contactKicker,
+                'contact-title': data.contactTitle,
+                'contact-intro': data.contactIntro,
+                'contact-github-label': data.contactGithubLabel,
+                'contact-github-value': data.contactGithubValue,
+                'contact-github-hint': data.contactGithubHint,
+                'contact-credly-label': data.contactCredlyLabel,
+                'contact-credly-value': data.contactCredlyValue,
+                'contact-credly-hint': data.contactCredlyHint,
+                'contact-phone-label': data.contactPhoneLabel,
+                'contact-phone-value': data.contactPhoneValue,
+                'contact-phone-hint': data.contactPhoneHint,
+                'contact-email-label': data.contactEmailLabel,
+                'contact-email-value': data.contactEmailValue,
+                'contact-email-hint': data.contactEmailHint,
+                'footer-text': data.footerText
+            };
+
+            Object.entries(staticTextMap).forEach(([id, text]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = text;
+                }
+            });
+
+            // Experience list items
+            document.getElementById('exp-item-1').textContent = data.expItem1;
+            document.getElementById('exp-item-2').textContent = data.expItem2;
+            document.getElementById('exp-item-3').textContent = data.expItem3;
+
+            // Render dynamic sections
+            renderSkillCategories(data.skillCategories);
+            renderProjects(data.projects);
+
+            resetTyping();
+        }
+
+        function typeEffect() {
+            const roles = dictionary[currentLang].typedRoles;
+            const currentRole = roles[roleIndex];
+
+            if (isDeleting) {
+                typedTextSpan.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex -= 1;
+            } else {
+                typedTextSpan.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex += 1;
+            }
+
+            let typeSpeed = isDeleting ? 36 : 92;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 1800;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 420;
+            }
+
+            typeInterval = window.setTimeout(typeEffect, typeSpeed);
+        }
+
+        function resetTyping() {
+            window.clearTimeout(typeInterval);
+            roleIndex = 0;
+            charIndex = 0;
+            isDeleting = false;
+            typedTextSpan.textContent = '';
+            typeEffect();
+        }
+
+        document.getElementById('langToggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            applyLanguage(currentLang);
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        applyLanguage(currentLang);
+    </script>
+</body>
+</html>
