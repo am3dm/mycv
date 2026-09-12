@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         :root {
             --bg: #0a0a0f;
@@ -1132,6 +1131,95 @@
     padding: 20px 0 !important;
 }
 
+/* ============ PRINT ============ */
+@media print {
+    * {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .site-header,
+    .hero-actions,
+    .terminal,
+    .footer,
+    .lang-btn,
+    nav {
+        display: none !important;
+    }
+
+    .card,
+    .cert-panel,
+    .skill-category,
+    .terminal {
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+        padding: 10px 0 !important;
+        background: #ffffff !important;
+    }
+
+    .experience-card {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 10px 0 !important;
+        background: #ffffff !important;
+        page-break-inside: avoid;
+    }
+
+    .project-card {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 10px 0 !important;
+        background: #ffffff !important;
+        page-break-inside: avoid;
+    }
+
+    .education-card {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 10px 0 !important;
+        background: #ffffff !important;
+        page-break-inside: avoid;
+    }
+
+    main {
+        padding: 0 !important;
+    }
+
+    .section {
+        padding: 20px 0 !important;
+        page-break-inside: avoid;
+    }
+
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .contact-card,
+    .skill-item,
+    .tag {
+        background: transparent !important;
+        border-color: #ccc !important;
+    }
+
+    a {
+        color: #000000 !important;
+        text-decoration: none !important;
+    }
+
+    .card,
+    .experience-card,
+    .project-card,
+    .education-card {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        color: #000000 !important;
+    }
+}
+
 /* ============ RESPONSIVE ============ */
         @media (max-width: 980px) {
             .profile-header {
@@ -2052,26 +2140,10 @@
         applyLanguage(currentLang);
 
         function generatePDF() {
-            document.body.classList.add('pdf-export-mode');
-            
-            const element = document.body;
-            const opt = {
-                margin:        10,
-                filename:      'Adnan_Al-Taee_CV.pdf',
-                image:         { type: 'jpeg', quality: 0.98 },
-                html2canvas:   { 
-                    scale: 2, 
-                    useCORS: true, 
-                    letterRendering: true,
-                    logging: false
-                },
-                jsPDF:         { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            html2pdf().from(element).set(opt).save().then(() => {
-                document.body.classList.remove('pdf-export-mode');
-            });
-        }
+    document.body.classList.add('pdf-export-mode');
+    window.print();
+    document.body.classList.remove('pdf-export-mode');
+}
     </script>
 </body>
 </html>
