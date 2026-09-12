@@ -1133,8 +1133,17 @@
 
 /* ============ PRINT ============ */
 @media print {
+    @page {
+        margin: 1.5cm;
+    }
+
     * {
         background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    body {
+        background: #ffffff !important;
         color: #000000 !important;
     }
 
@@ -1145,6 +1154,20 @@
     .lang-btn,
     nav {
         display: none !important;
+    }
+
+    main {
+        padding: 0 !important;
+    }
+
+    h1, h2, h3 {
+        color: #000000 !important;
+        page-break-after: avoid;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
     }
 
     .card,
@@ -1158,22 +1181,8 @@
         background: #ffffff !important;
     }
 
-    .experience-card {
-        border: none !important;
-        box-shadow: none !important;
-        padding: 10px 0 !important;
-        background: #ffffff !important;
-        page-break-inside: avoid;
-    }
-
-    .project-card {
-        border: none !important;
-        box-shadow: none !important;
-        padding: 10px 0 !important;
-        background: #ffffff !important;
-        page-break-inside: avoid;
-    }
-
+    .experience-card,
+    .project-card,
     .education-card {
         border: none !important;
         box-shadow: none !important;
@@ -1182,18 +1191,8 @@
         page-break-inside: avoid;
     }
 
-    main {
-        padding: 0 !important;
-    }
-
     .section {
         padding: 20px 0 !important;
-        page-break-inside: avoid;
-    }
-
-    body {
-        background: #ffffff !important;
-        color: #000000 !important;
     }
 
     .contact-card,
@@ -1206,17 +1205,6 @@
     a {
         color: #000000 !important;
         text-decoration: none !important;
-    }
-
-    .card,
-    .experience-card,
-    .project-card,
-    .education-card {
-        page-break-inside: avoid;
-    }
-
-    h1, h2, h3 {
-        color: #000000 !important;
     }
 }
 
@@ -2140,10 +2128,10 @@
         applyLanguage(currentLang);
 
         function generatePDF() {
-    document.body.classList.add('pdf-export-mode');
-    window.print();
-    document.body.classList.remove('pdf-export-mode');
-}
+            document.body.classList.add('pdf-export-mode');
+            window.print();
+            document.body.classList.remove('pdf-export-mode');
+        }
     </script>
 </body>
 </html>
