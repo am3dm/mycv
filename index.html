@@ -1142,9 +1142,30 @@
         color: #000000 !important;
     }
 
+    html,
+    body,
+    #root,
+    main,
+    .container {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        display: block !important;
+    }
+
     body {
         background: #ffffff !important;
         color: #000000 !important;
+        min-height: auto !important;
+    }
+
+    .profile-header {
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        grid-template-columns: none !important;
+        page-break-inside: avoid;
     }
 
     .site-header,
@@ -1160,9 +1181,41 @@
         padding: 0 !important;
     }
 
+    .nav,
+    .nav-links,
+    .hero-actions,
+    .terminal,
+    .cert-panel,
+    .contact-grid,
+    .skills-category-grid,
+    .projects-grid,
+    .project-details,
+    .skill-list,
+    .experience-list,
+    .education-focus,
+    .experience-header,
+    .education-header,
+    .profile-visual,
+    .profile-copy {
+        display: block !important;
+    }
+
+    .card,
+    .cert-panel,
+    .skill-category,
+    .terminal,
+    .experience-card,
+    .project-card,
+    .education-card,
+    .contact-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
     h1, h2, h3 {
         color: #000000 !important;
         page-break-after: avoid;
+        break-after: avoid;
     }
 
     p {
@@ -1189,10 +1242,13 @@
         padding: 10px 0 !important;
         background: #ffffff !important;
         page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .section {
         padding: 20px 0 !important;
+        page-break-inside: auto;
+        break-inside: auto;
     }
 
     .contact-card,
@@ -1205,6 +1261,18 @@
     a {
         color: #000000 !important;
         text-decoration: none !important;
+    }
+
+    .grid {
+        display: block !important;
+    }
+
+    .project-detail {
+        display: block !important;
+    }
+
+    .project-detail::before {
+        display: none !important;
     }
 }
 
@@ -1704,13 +1772,13 @@
                 contactCredlyValue: 'Certifications',
                 contactCredlyHint: 'Verified badges',
                 contactPhoneLabel: 'Phone / WhatsApp',
-                contactPhoneValue: '+964 790 185 486',
+                contactPhoneValue: '+964 790 185 4868',
                 contactPhoneHint: 'Available for calls',
                 contactEmailLabel: 'Email',
-                contactEmailValue: 'adnan@adnanaltaee.com',
+                contactEmailValue: 'info@adnanaltaee.com',
                 contactEmailHint: 'Direct inbox',
                 contactWebsiteLabel: 'Website',
-                contactWebsiteValue: 'adnanaltaee.com',
+                contactWebsiteValue: 'cv.adnanaltaee.com',
                 contactWebsiteHint: 'Portfolio & Profile',
                 footerText: '© 2026 Adnan Al-Taee. Built with HTML, CSS, and JavaScript.'
             },
@@ -1871,7 +1939,7 @@
                 contactEmailValue: 'adnan@adnanaltaee.com',
                 contactEmailHint: 'Direct inbox',
                 contactWebsiteLabel: 'الموقع الإلكتروني',
-                contactWebsiteValue: 'adnanaltaee.com',
+                contactWebsiteValue: 'info@adnanaltaee.com',
                 contactWebsiteHint: 'معرض الأعمال',
                 footerText: '© 2026 Adnan Al-Taee. Built with HTML, CSS, and JavaScript.'
             }
